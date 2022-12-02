@@ -5,6 +5,6 @@ def readfile( filename ):
 
     with open(filename) as file:
         for line in file:
-            filelines.append(line) 
+            filelines.append(line.strip()) 
     
     return filelines 

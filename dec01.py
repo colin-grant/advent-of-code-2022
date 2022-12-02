@@ -15,6 +15,8 @@ def build_elf_totals():
         else:
             cal = cal + int(line) 
 
+    elves.append(cal)
+
     return elves 
 
 def first(elves): 
@@ -25,11 +27,9 @@ def first(elves):
 
 def second(elves):
 
-    elves.sort(reverse=True)
+    sorted_elves = sorted(elves, reverse=True)
 
-    cal = 0 
-    for i in range(0,3):
-        cal = cal + elves[i] 
+    cal = sum(sorted_elves[0:3])
 
     print(f"Total Max Calories = {cal}")
     
