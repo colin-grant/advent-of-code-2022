@@ -1,7 +1,6 @@
 
 import common.filereader as fr 
 
-
 def calc_score( opp, you ):
     
     score = 0 
