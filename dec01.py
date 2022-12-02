@@ -3,7 +3,7 @@ import common.filereader as fr
 
 def build_elf_totals():
 
-    filelines = fr.readfile("input/input1.txt")
+    filelines = fr.readfile("input/input01.txt")
     elves = list() 
     cal = 0 
 
