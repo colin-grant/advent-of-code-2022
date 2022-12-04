@@ -1,1 +1,4 @@
 input/*
+common/__pycache__
+*.pyc
+
