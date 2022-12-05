@@ -31,9 +31,8 @@ def is_overlap(range1, range2):
     low1, upp1 = range1 
     low2, upp2 = range2 
 
-    if (    ((low2 <= low1) and (upp2 >= low1)) 
-        or  ((low2 <= upp1) and (upp2 >= upp1)) 
-        or  (is_contained(range1,range2))): 
+    if (    ((low2 >= low1) and (low2 <= upp1)) 
+        or  ((upp2 >= low1) and (upp2 <= upp1)) ): 
 
         return True 
 
@@ -56,7 +55,7 @@ def first(filename):
 
 def second(filename): 
 
-    contained_count = 0 
+    overlap_count = 0 
 
     filelines = fr.readfile(filename) 
 
@@ -64,10 +63,10 @@ def second(filename):
 
         range1, range2 = extract_ranges(line) 
 
-        if is_overlap(range1, range2):
-            contained_count += 1 
+        if is_overlap(range1, range2) or is_overlap(range2, range1):
+            overlap_count += 1 
 
-    print(f"Total number of contained ranges = {contained_count}")
+    print(f"Total number of overlapping ranges = {overlap_count}")
 
 
 
