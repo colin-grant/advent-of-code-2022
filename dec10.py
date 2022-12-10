@@ -40,7 +40,7 @@ def second(filename):
     lines = fr.readfile(filename)
     current_instr = 0
     instr_count = 0  
-    crt = ['.'] * 240  
+    crt = [' '] * 240  
     
     while current_instr < len(lines):
         for crt_pos in range(0,240): 
